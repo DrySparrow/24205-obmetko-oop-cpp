@@ -15,7 +15,7 @@ public:
     CSVWriter(const std::string& filename);
     void open();
     void close();
-    void write(const std::vector<std::tuple<std::string, int, double>>& data);
+    void writerow(const std::tuple<std::string, int, double>& row);
 };
 
 #endif

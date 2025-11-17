@@ -17,9 +17,7 @@ void CSVWriter::close() {
     }
 }
 
-void CSVWriter::write(const std::vector<std::tuple<std::string, int, double>>& data) {
-    for (const auto& row : data) {
-        file << std::get<0>(row) << "," << std::get<1>(row) << ","
-             << std::fixed << std::setprecision(2) << std::get<2>(row) << "\n";
-    }
+void CSVWriter::writerow(const std::tuple<std::string, int, double>& row) {
+    file << std::get<0>(row) << "," << std::get<1>(row) << ","
+            << std::fixed << std::setprecision(2) << std::get<2>(row) << "\n";
 }

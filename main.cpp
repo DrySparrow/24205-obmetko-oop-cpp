@@ -23,7 +23,9 @@ int main(int argc, char* argv[]) {
 
         CSVWriter writer(argv[2]);
         writer.open();
-        writer.write(statistics);
+        for (const auto& row : statistics) {
+            writer.writerow(row);
+        }
         writer.close();
 
         std::cout << "Successfully processed " << statistics.size() << " words to " << argv[2] << std::endl;

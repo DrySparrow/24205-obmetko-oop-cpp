@@ -1,86 +1,86 @@
 [
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/word_count.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\main.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\main.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/main.cpp",
-  "output": "CMakeFiles/word_count.dir/main.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\main.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\main.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\main.cpp",
+  "output": "CMakeFiles\\word_count.dir\\main.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/word_count.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\FileReader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/FileReader.cpp",
-  "output": "CMakeFiles/word_count.dir/FileReader.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\FileReader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
+  "output": "CMakeFiles\\word_count.dir\\FileReader.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/word_count.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\WordCounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/WordCounter.cpp",
-  "output": "CMakeFiles/word_count.dir/WordCounter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\WordCounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
+  "output": "CMakeFiles\\word_count.dir\\WordCounter.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/word_count.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\WordStatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/WordStatistics.cpp",
-  "output": "CMakeFiles/word_count.dir/WordStatistics.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\WordStatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
+  "output": "CMakeFiles\\word_count.dir\\WordStatistics.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/word_count.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\CSVWriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/CSVWriter.cpp",
-  "output": "CMakeFiles/word_count.dir/CSVWriter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\word_count.dir\\CSVWriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
+  "output": "CMakeFiles\\word_count.dir\\CSVWriter.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_main.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_main.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/test_main.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/test_main.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_main.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_main.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_main.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\test_main.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_filereader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_filereader.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/test_filereader.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/test_filereader.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_filereader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_filereader.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_filereader.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\test_filereader.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_wordcounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordcounter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/test_wordcounter.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/test_wordcounter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_wordcounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordcounter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordcounter.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\test_wordcounter.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_wordstatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordstatistics.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/test_wordstatistics.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/test_wordstatistics.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_wordstatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordstatistics.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_wordstatistics.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\test_wordstatistics.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_csvwriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_csvwriter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/test_csvwriter.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/test_csvwriter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\test_csvwriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_csvwriter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\test_csvwriter.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\test_csvwriter.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\FileReader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/FileReader.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/FileReader.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\FileReader.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\FileReader.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\FileReader.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\WordCounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/WordCounter.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/WordCounter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\WordCounter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordCounter.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\WordCounter.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\WordStatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/WordStatistics.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/WordStatistics.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\WordStatistics.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\WordStatistics.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\WordStatistics.cpp.obj"
 },
 {
   "directory": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build",
-  "command": "C:\\mingw64\\bin\\c++.exe  @CMakeFiles/run_all_tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\CSVWriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
-  "file": "C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/CSVWriter.cpp",
-  "output": "CMakeFiles/run_all_tests.dir/CSVWriter.cpp.obj"
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include -g -std=gnu++17 -o CMakeFiles\\run_all_tests.dir\\CSVWriter.cpp.obj -c C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
+  "file": "C:\\Users\\Sergey\\Desktop\\coding\\C++\\tasks_oop\\task-0b\\CSVWriter.cpp",
+  "output": "CMakeFiles\\run_all_tests.dir\\CSVWriter.cpp.obj"
 }
 ]

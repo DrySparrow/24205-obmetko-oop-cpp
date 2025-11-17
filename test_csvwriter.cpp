@@ -12,7 +12,9 @@ TEST(CSVWriterTest, WriteData) {
     };
     
     writer.open();
-    writer.write(data);
+    for (const auto& row : data) {
+        writer.writerow(row);
+    }
     writer.close();
     
     // Verify file content
@@ -49,7 +51,9 @@ TEST(CSVWriterTest, PrecisionFormatting) {
     };
     
     writer.open();
-    writer.write(data);
+    for (const auto& row : data) {
+        writer.writerow(row);
+    }
     writer.close();
     
     std::ifstream outputFile("test_precision.csv");

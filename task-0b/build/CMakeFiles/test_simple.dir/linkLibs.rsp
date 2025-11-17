@@ -1,1 +1,0 @@
- "C:/Users/Sergey/vcpkg/installed/x64-mingw-static/lib/libgtest.a" "C:/Users/Sergey/vcpkg/installed/x64-mingw-static/lib/libgtest_main.a" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

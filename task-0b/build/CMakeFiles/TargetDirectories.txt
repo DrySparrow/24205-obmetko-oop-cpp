@@ -1,4 +1,0 @@
-C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build/CMakeFiles/word_count.dir
-C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build/CMakeFiles/run_all_tests.dir
-C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build/CMakeFiles/edit_cache.dir
-C:/Users/Sergey/Desktop/coding/C++/tasks_oop/task-0b/build/CMakeFiles/rebuild_cache.dir

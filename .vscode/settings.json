@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "files.associations": {
+        "*.cpp": "cpp",
+        "*.h": "cpp",
+        "stdexcept": "cpp"
+    }
+}

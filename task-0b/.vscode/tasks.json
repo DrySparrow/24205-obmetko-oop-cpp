@@ -1,0 +1,110 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "tasks": [
+        {
+            "label": "build main",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I.",
+                "-IC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/include",
+                "-o", "word_count.exe",
+                "main.cpp", "FileReader.cpp", "WordCounter.cpp", "WordStatistics.cpp", "CSVWriter.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build test_filereader",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I.",
+                "-IC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/include",
+                "-LC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/lib",
+                "test_filereader.cpp", "FileReader.cpp", "test_main.cpp",
+                "-o", "test_filereader.exe",
+                "-lgtest", "-lpthread"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build test_wordcounter",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I.",
+                "-IC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/include",
+                "-LC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/lib",
+                "test_wordcounter.cpp", "FileReader.cpp", "WordCounter.cpp", "test_main.cpp",
+                "-o", "test_wordcounter.exe",
+                "-lgtest", "-lpthread"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build test_wordstatistics",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I.",
+                "-IC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/include",
+                "-LC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/lib",
+                "test_wordstatistics.cpp", "WordStatistics.cpp", "test_main.cpp",
+                "-o", "test_wordstatistics.exe",
+                "-lgtest", "-lpthread"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build test_csvwriter",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-I.",
+                "-IC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/include",
+                "-LC:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/lib",
+                "test_csvwriter.cpp", "CSVWriter.cpp", "test_main.cpp",
+                "-o", "test_csvwriter.exe",
+                "-lgtest", "-lpthread"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "copy dll",
+            "type": "shell",
+            "command": "copy",
+            "args": [
+                "C:/Users/Sergey/vcpkg/installed/x64-mingw-dynamic/bin/libgtest.dll",
+                "${workspaceFolder}"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "build all tests",
+            "dependsOn": [
+                "build test_filereader",
+                "build test_wordcounter", 
+                "build test_wordstatistics",
+                "build test_csvwriter",
+                "copy dll"
+            ],
+            "group": "build"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+# ninja log v6
+5	37	7851029012885809	clean	d6542ab91c93f907
+17	2410	7851029013564920	CMakeFiles/word_count.dir/FileReader.cpp.obj	77f2d8e02007ef31
+47	2458	7851029013865694	CMakeFiles/word_count.dir/CSVWriter.cpp.obj	fc6b2fb1f55fa95a
+7	3382	7851029013472910	CMakeFiles/word_count.dir/main.cpp.obj	32bc38cccb550c5b
+32	3511	7851029013673775	CMakeFiles/word_count.dir/WordCounter.cpp.obj	42db8fe4338d0b06
+55	4342	7851029013954203	CMakeFiles/run_all_tests.dir/test_main.cpp.obj	7e94008da3959527
+2444	4953	7851029037848157	CMakeFiles/run_all_tests.dir/FileReader.cpp.obj	ecb162594629ee3f
+39	4965	7851029013779800	CMakeFiles/word_count.dir/WordStatistics.cpp.obj	dd4722311caf38f4
+65	5546	7851029014077527	CMakeFiles/run_all_tests.dir/test_filereader.cpp.obj	952953fbc83fe536
+4970	5553	7851029063074536	word_count.exe	5990d2ad4e79b8d6
+2463	5760	7851029038033022	CMakeFiles/run_all_tests.dir/WordCounter.cpp.obj	a7f37353c3a559d4
+4327	6218	7851029056698705	CMakeFiles/run_all_tests.dir/CSVWriter.cpp.obj	2204668472a58cbb
+3425	6681	7851029047606067	CMakeFiles/run_all_tests.dir/WordStatistics.cpp.obj	c5146ecdfe18ad29
+115	6793	7851029014567437	CMakeFiles/run_all_tests.dir/test_csvwriter.cpp.obj	2019edad3355099d
+78	6811	7851029014174158	CMakeFiles/run_all_tests.dir/test_wordcounter.cpp.obj	8db069b990f99c13
+85	6951	7851029014424821	CMakeFiles/run_all_tests.dir/test_wordstatistics.cpp.obj	35325a6b09f37acd
+6955	7260	7851029082859688	run_all_tests.exe	8b40459195421bc6

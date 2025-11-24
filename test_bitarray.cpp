@@ -216,8 +216,3 @@ TEST(BitArrayTest, AssignmentOperator) {
     EXPECT_TRUE(assigned[1]);
     EXPECT_FALSE(assigned[2]);
 }
-
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

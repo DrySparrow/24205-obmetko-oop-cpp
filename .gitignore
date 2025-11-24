@@ -2,4 +2,3 @@
 *.json
 CMakeLists.txt
 build/
-main.cpp

@@ -13,6 +13,7 @@ private:
     
 public:
     BitArray();
+    ~BitArray() = default;
     explicit BitArray(int num_bits);
     explicit BitArray(int num_bits, bool value);
     BitArray(const BitArray& b);

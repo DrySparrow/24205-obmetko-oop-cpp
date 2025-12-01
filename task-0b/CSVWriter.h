@@ -12,10 +12,10 @@ private:
     std::ofstream file;
 
 public:
-    CSVWriter(const std::string& filename);
     void open();
     void close();
-    void writerow(const std::tuple<std::string, int, double>& row);
+    CSVWriter(const std::string& filename);
+    void write(const std::string& value1, int value2, double value3);
 };
 
 #endif

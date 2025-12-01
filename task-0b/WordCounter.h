@@ -4,17 +4,15 @@
 #include "FileReader.h"
 #include <map>
 #include <string>
+#include <vector>
 
 class WordCounter {
 private:
-    FileReader& reader;
     std::map<std::string, int> wordCount;
-    
-    void processLine(const std::string& line);
 
 public:
-    WordCounter(FileReader& reader);
-    void countWords();
+    void handle(const std::string& line);
+    void handle(const std::vector<std::string>& lines);
     const std::map<std::string, int>& getWordCount() const;
 };
 

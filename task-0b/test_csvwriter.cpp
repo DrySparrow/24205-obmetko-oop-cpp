@@ -12,8 +12,8 @@ TEST(CSVWriterTest, WriteData) {
     };
     
     writer.open();
-    for (const auto& row : data) {
-        writer.writerow(row);
+    for (const auto& [word, count, percentage] : data) {
+        writer.write(word, count, percentage);
     }
     writer.close();
     
@@ -51,8 +51,8 @@ TEST(CSVWriterTest, PrecisionFormatting) {
     };
     
     writer.open();
-    for (const auto& row : data) {
-        writer.writerow(row);
+    for (const auto& [word, count, percentage] : data) {
+        writer.write(word, count, percentage);
     }
     writer.close();
     

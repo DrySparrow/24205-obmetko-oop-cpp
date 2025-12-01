@@ -15,20 +15,25 @@ int main(int argc, char* argv[]) {
 
     try {
         FileReader reader(argv[1]);
-        WordCounter counter(reader);
-        counter.countWords();
+        WordCounter counter;
+        
+        reader.open();
+        while (reader.hasNext()) {
+            counter.handle(reader.next());
+        }
+        reader.close();
 
         WordStatistics stats(counter.getWordCount());
-        auto statistics = stats.getStatistics();
+        auto vectorStatistics = stats.getStatistics();
 
         CSVWriter writer(argv[2]);
         writer.open();
-        for (const auto& row : statistics) {
-            writer.writerow(row);
+        for (const auto& [word, count, percentage] : vectorStatistics) {
+            writer.write(word, count, percentage);
         }
         writer.close();
 
-        std::cout << "Successfully processed " << statistics.size() << " words to " << argv[2] << std::endl;
+        std::cout << "Successfully processed " << vectorStatistics.size() << " words to " << argv[2] << std::endl;
         std::cout << "Press Enter to exit...";
         std::cin.get();
 

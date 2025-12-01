@@ -20,8 +20,12 @@ protected:
 
 TEST_F(WordCounterTest, CountWordsBasic) {
     FileReader reader("test_count.txt");
-    WordCounter counter(reader);
-    counter.countWords();
+    WordCounter counter;
+    reader.open();
+    while (reader.hasNext()) {
+        counter.handle(reader.next());
+    }
+    reader.close();
     
     auto wordCount = counter.getWordCount();
     
@@ -44,8 +48,12 @@ TEST_F(WordCounterTest, CaseInsensitive) {
     testFile.close();
     
     FileReader reader("test_case.txt");
-    WordCounter counter(reader);
-    counter.countWords();
+    WordCounter counter;
+    reader.open();
+    while (reader.hasNext()) {
+        counter.handle(reader.next());
+    }
+    reader.close();
     
     auto wordCount = counter.getWordCount();
     EXPECT_EQ(wordCount["hello"], 3);
@@ -59,8 +67,12 @@ TEST_F(WordCounterTest, SeparatorsHandling) {
     testFile.close();
     
     FileReader reader("test_separators.txt");
-    WordCounter counter(reader);
-    counter.countWords();
+    WordCounter counter;
+    reader.open();
+    while (reader.hasNext()) {
+        counter.handle(reader.next());
+    }
+    reader.close();
     
     auto wordCount = counter.getWordCount();
     EXPECT_EQ(wordCount["word1"], 1);

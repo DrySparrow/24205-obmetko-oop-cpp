@@ -1,7 +1,6 @@
 #include "FileReader.h"
 #include <stdexcept>
 
-// Приватные методы
 void FileReader::checkFileIsOpen() const {
     if (file == nullptr || !file->is_open()) {
         throw std::runtime_error("File is not open: " + filename);
@@ -16,18 +15,15 @@ void FileReader::cleanup() {
     }
 }
 
-// Конструктор
 FileReader::FileReader(const std::string& filename) 
     : filename(filename), file(nullptr) {}
 
-// Деструктор
 FileReader::~FileReader() {
     cleanup();
 }
 
-// Основной публичный интерфейс
 void FileReader::open() {
-    // Закрываем предыдущий файл если открыт
+    // Close the previous file if it is open
     cleanup();
     
     file = new std::ifstream(filename);
@@ -58,17 +54,17 @@ std::string FileReader::next() {
 void FileReader::reset() {
     checkFileIsOpen();
     
-    file->clear();          // Сбрасываем флаги ошибок
-    file->seekg(0);         // Перемещаемся в начало файла
+    file->clear();          // Resetting error flags
+    file->seekg(0);         // Move to the beginning of the file
 }
 
-// Move конструктор
+// Move constructor
 FileReader::FileReader(FileReader&& other) noexcept 
     : filename(std::move(other.filename)), file(other.file) {
     other.file = nullptr;
 }
 
-// Move оператор присваивания
+// Move assignment operator
 FileReader& FileReader::operator=(FileReader&& other) noexcept {
     if (this != &other) {
         cleanup();

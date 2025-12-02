@@ -216,3 +216,12 @@ TEST(BitArrayTest, AssignmentOperator) {
     EXPECT_TRUE(assigned[1]);
     EXPECT_FALSE(assigned[2]);
 }
+
+TEST(BitArrayTest, ChangeIndex) {
+    BitArray array(3);
+    array[0] = true;
+
+    EXPECT_TRUE(array[0]);
+    EXPECT_FALSE(array[2]);
+    EXPECT_FALSE(array[2]);
+}

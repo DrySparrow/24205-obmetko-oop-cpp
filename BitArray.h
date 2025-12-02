@@ -1,60 +1,82 @@
 #ifndef BITARRAY_H
 #define BITARRAY_H
 
-#include <cstdint>
-#include <string>
 #include <vector>
+#include <cstdint>
+#include <stdexcept>
+#include <string>
 
-class BitArray
-{
+class BitArray {
 private:
     std::vector<uint8_t> data;
     size_t bit_count;
-    
+
 public:
+    class BitProxy {
+    private:
+        uint8_t& byte;
+        uint8_t mask;
+
+    public:
+        BitProxy(uint8_t& data_byte, size_t bit_pos)
+            : byte(data_byte), mask(1 << bit_pos) {}
+
+        BitProxy& operator=(bool value) {
+            if (value) {
+                byte |= mask;
+            } else {
+                byte &= ~mask;
+            }
+            return *this;
+        }
+
+        BitProxy& operator=(const BitProxy& other) {
+            if (this != &other) {
+                *this = static_cast<bool>(other);
+            }
+            return *this;
+        }
+
+        operator bool() const {
+            return (byte & mask) != 0;
+        }
+    };
+
     BitArray();
-    ~BitArray() = default;
-    explicit BitArray(int num_bits);
-    explicit BitArray(int num_bits, bool value);
+    BitArray(int num_bits);
+    BitArray(int num_bits, bool value);
     BitArray(const BitArray& b);
     
-    // exchange all values ​​of two arrays
-    void swap(BitArray& other);
     BitArray& operator=(const BitArray& other);
     
-    // changes the size by adding or removing low-order bits
+    BitProxy operator[](size_t index);
+    bool operator[](size_t index) const;
+    
+    int size() const;
+    bool empty() const;
     void resize(size_t new_size, bool value = false);
-    // clear all bits
     void clear();
-    // add least significant bit
     void push_back(bool bit);
+    
+    void swap(BitArray& other);
+    BitArray& set(int n, bool val = true);
+    BitArray& set();
+    BitArray& reset(int n);
+    BitArray& reset();
+    bool any() const;
+    bool none() const;
+    int count() const;
     
     BitArray& operator&=(const BitArray& b);
     BitArray& operator|=(const BitArray& b);
     BitArray& operator^=(const BitArray& b);
+    BitArray operator~() const;
     
     BitArray& operator<<=(int n);
     BitArray& operator>>=(int n);
     BitArray operator<<(int n) const;
     BitArray operator>>(int n) const;
     
-    // set the value of the n-th bit at index
-    BitArray& set(int n, bool val = true);
-    // set all bits to true
-    BitArray& set();
-    // set the value of the n-th bit to false
-    BitArray& reset(int n);
-    // set all bits to false
-    BitArray& reset();
-    
-    bool any() const;
-    bool none() const;
-    BitArray operator~() const;
-    int count() const;
-    
-    bool operator[](int index) const;
-    int size() const;
-    bool empty() const;
     std::string to_string() const;
 };
 

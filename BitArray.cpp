@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <stdexcept>
 
-// Constructors
 BitArray::BitArray() : bit_count(0) {}
 
 BitArray::BitArray(int num_bits) : bit_count(0) {
@@ -31,10 +30,23 @@ BitArray::BitArray(int num_bits, bool value) : bit_count(0) {
 
 BitArray::BitArray(const BitArray& b) : data(b.data), bit_count(b.bit_count) {}
 
-// Methods
-void BitArray::swap(BitArray& other) {
-    std::swap(data, other.data);
-    std::swap(bit_count, other.bit_count);
+BitArray::BitProxy BitArray::operator[](size_t index) {
+    if (index >= bit_count) {
+        throw std::out_of_range("Bit index out of range");
+    }
+    size_t byte_index = index / 8;
+    size_t bit_offset = index % 8;
+    return BitProxy(data[byte_index], bit_offset);
+}
+
+bool BitArray::operator[](size_t index) const {
+    if (index >= bit_count) {
+        throw std::out_of_range("Bit index out of range");
+    }
+    size_t byte_index = index / 8;
+    size_t bit_offset = index % 8;
+    uint8_t mask = 1 << bit_offset;
+    return (data[byte_index] & mask) != 0;
 }
 
 BitArray& BitArray::operator=(const BitArray& other) {
@@ -43,6 +55,11 @@ BitArray& BitArray::operator=(const BitArray& other) {
         bit_count = other.bit_count;
     }
     return *this;
+}
+
+void BitArray::swap(BitArray& other) {
+    std::swap(data, other.data);
+    std::swap(bit_count, other.bit_count);
 }
 
 void BitArray::resize(size_t new_size, bool value) {
@@ -68,10 +85,67 @@ void BitArray::clear() {
 }
 
 void BitArray::push_back(bool bit) {
-	resize(bit_count + 1, bit);
+    resize(bit_count + 1, bit);
 }
 
-// Bitwise operations
+BitArray& BitArray::set(int n, bool val) {
+    if (n < 0 || static_cast<size_t>(n) >= bit_count) {
+        throw std::out_of_range("Bit index out of range");
+    }
+    
+    size_t byte_index = static_cast<size_t>(n) / 8;
+    size_t bit_offset = static_cast<size_t>(n) % 8;
+    uint8_t mask = 1 << bit_offset;
+    
+    if (val) {
+        data[byte_index] |= mask;
+    } else {
+        data[byte_index] &= ~mask;
+    }
+    
+    return *this;
+}
+
+BitArray& BitArray::set() {
+    for (size_t i = 0; i < bit_count; ++i) {
+        set(i, true);
+    }
+    return *this;
+}
+
+BitArray& BitArray::reset(int n) {
+    return set(n, false);
+}
+
+BitArray& BitArray::reset() {
+    for (auto& byte : data) {
+        byte = 0;
+    }
+    return *this;
+}
+
+bool BitArray::any() const {
+    for (size_t i = 0; i < bit_count; ++i) {
+        if ((*this)[i]) return true;
+    }
+    return false;
+}
+
+bool BitArray::none() const {
+    for (size_t i = 0; i < bit_count; ++i) {
+        if ((*this)[i]) return false;
+    }
+    return true;
+}
+
+int BitArray::count() const {
+    int result = 0;
+    for (size_t i = 0; i < bit_count; ++i) {
+        result += (*this)[i];
+    }
+    return result;
+}
+
 BitArray& BitArray::operator&=(const BitArray& b) {
     size_t min_size = std::min(bit_count, b.bit_count);
     for (size_t i = 0; i < min_size; ++i) {
@@ -99,7 +173,19 @@ BitArray& BitArray::operator^=(const BitArray& b) {
     return *this;
 }
 
-// Shifts
+BitArray BitArray::operator~() const {
+    BitArray result(*this);
+    for (size_t i = 0; i < result.data.size(); ++i) {
+        result.data[i] = ~result.data[i];
+    }
+    if (bit_count % 8 != 0) {
+        size_t last_byte = result.data.size() - 1;
+        uint8_t mask = (1 << (bit_count % 8)) - 1;
+        result.data[last_byte] &= mask;
+    }
+    return result;
+}
+
 BitArray& BitArray::operator<<=(int n) {
     if (n <= 0) {
         if (n < 0) return *this >>= -n;
@@ -154,89 +240,6 @@ BitArray BitArray::operator>>(int n) const {
     return result;
 }
 
-BitArray& BitArray::set(int n, bool val) {
-    if (n < 0 || static_cast<size_t>(n) >= bit_count) {
-        throw std::out_of_range("Bit index out of range");
-    }
-    
-    size_t byte_index = static_cast<size_t>(n) / 8;
-    size_t bit_offset = static_cast<size_t>(n) % 8;
-    uint8_t mask = 1 << bit_offset;
-    
-    if (val) {
-        data[byte_index] |= mask;
-    } else {
-        data[byte_index] &= ~mask;
-    }
-    
-    return *this;
-}
-
-BitArray& BitArray::set() {
-    for (size_t i = 0; i < bit_count; ++i) {
-        set(i, true);
-    }
-    return *this;
-}
-
-BitArray& BitArray::reset(int n) {
-    return set(n, false);
-}
-
-BitArray& BitArray::reset() {
-    for (auto& byte : data) {
-        byte = 0;
-    }
-    return *this;
-}
-
-bool BitArray::any() const {
-    for (size_t i = 0; i < bit_count; ++i) {
-        if ((*this)[i]) return true;
-    }
-    return false;
-}
-
-bool BitArray::none() const {
-    for (size_t i = 0; i < bit_count; ++i) {
-        if ((*this)[i]) return false;
-    }
-    return true;
-}
-
-BitArray BitArray::operator~() const {
-    BitArray result(*this);
-    for (size_t i = 0; i < result.data.size(); ++i) {
-        result.data[i] = ~result.data[i];
-    }
-    if (bit_count % 8 != 0) {
-        size_t last_byte = result.data.size() - 1;
-        uint8_t mask = (1 << (bit_count % 8)) - 1;
-        result.data[last_byte] &= mask;
-    }
-    return result;
-}
-
-int BitArray::count() const {
-    int result = 0;
-    for (size_t i = 0; i < bit_count; ++i) {
-        result += (*this)[i];
-    }
-    return result;
-}
-
-bool BitArray::operator[](int index) const {
-    if (index >= static_cast<int>(bit_count) || index < 0) {
-        throw std::out_of_range("Bit index out of range");
-    }
-
-    size_t byte_index = index / 8;
-    size_t bit_offset = index % 8;
-    uint8_t mask = 1 << bit_offset;
-    
-    return (data[byte_index] & mask) != 0;
-}
-
 int BitArray::size() const {
     return bit_count;
 }
@@ -256,7 +259,6 @@ std::string BitArray::to_string() const {
     return result;
 }
 
-// Global Operator Implementations
 bool operator==(const BitArray& a, const BitArray& b) {
     if (a.size() != b.size()) return false;
     

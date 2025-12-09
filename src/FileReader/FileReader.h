@@ -22,7 +22,6 @@ public:
     std::string next();
     void reset();
     
-    // No copying (rule of five)
     FileReader(const FileReader&) = delete;
     FileReader& operator=(const FileReader&) = delete;
     

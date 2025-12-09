@@ -1,7 +1,7 @@
 #include "WordStatistics.h"
 #include <algorithm>
 
-WordStatistics::WordStatistics(const std::map<std::string, int>& wc) : wordCount(wc) {
+WordStatistics::WordStatistics(const std::map<std::string, int>& ws) : wordCount(ws) {
     calculateTotal();
     for (const auto& pair : wordCount) {
         sortedWords.push_back(pair);

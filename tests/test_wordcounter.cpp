@@ -2,6 +2,7 @@
 #include <fstream>
 #include "FileReader.h"
 #include "WordCounter.h"
+#include "LineParser.h"
 
 class WordCounterTest : public ::testing::Test {
 protected:
@@ -22,8 +23,11 @@ TEST_F(WordCounterTest, CountWordsBasic) {
     FileReader reader("test_count.txt");
     WordCounter counter;
     reader.open();
+    std::vector<std::string> line;
+    LineParser lp;
     while (reader.hasNext()) {
-        counter.handle(reader.next());
+        line = lp.parse(reader.next());
+        counter.handle(line);
     }
     reader.close();
     
@@ -50,8 +54,11 @@ TEST_F(WordCounterTest, CaseInsensitive) {
     FileReader reader("test_case.txt");
     WordCounter counter;
     reader.open();
+    std::vector<std::string> line;
+    LineParser lp;
     while (reader.hasNext()) {
-        counter.handle(reader.next());
+        line = lp.parse(reader.next());
+        counter.handle(line);
     }
     reader.close();
     
@@ -69,8 +76,11 @@ TEST_F(WordCounterTest, SeparatorsHandling) {
     FileReader reader("test_separators.txt");
     WordCounter counter;
     reader.open();
+    std::vector<std::string> line;
+    LineParser lp;
     while (reader.hasNext()) {
-        counter.handle(reader.next());
+        line = lp.parse(reader.next());
+        counter.handle(line);
     }
     reader.close();
     

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 #include <tuple>
+#include <iomanip>
 
 class CSVWriter {
 private:
@@ -12,10 +13,16 @@ private:
     std::ofstream file;
 
 public:
+    CSVWriter(const std::string& filename);
     void open();
     void close();
-    CSVWriter(const std::string& filename);
-    void write(const std::string& value1, int value2, double value3);
+    void write(const std::vector<std::string> args);
+    
+    static std::string formatFloat(double value, int precision = 2) {
+        std::ostringstream oss;
+        oss << std::fixed << std::setprecision(precision) << value;
+        return oss.str();
+    }
 };
 
 #endif

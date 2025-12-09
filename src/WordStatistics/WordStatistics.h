@@ -15,7 +15,7 @@ private:
     void calculateTotal();
 
 public:
-    WordStatistics(const std::map<std::string, int>& wc);
+    WordStatistics(const std::map<std::string, int>& ws);
     std::vector<std::tuple<std::string, int, double>> getStatistics() const;
 };
 

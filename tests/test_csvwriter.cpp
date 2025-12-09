@@ -13,7 +13,11 @@ TEST(CSVWriterTest, WriteData) {
     
     writer.open();
     for (const auto& [word, count, percentage] : data) {
-        writer.write(word, count, percentage);
+        writer.write({
+            word,
+            std::to_string(count),
+            CSVWriter::formatFloat(percentage)
+        });
     }
     writer.close();
     
@@ -52,7 +56,11 @@ TEST(CSVWriterTest, PrecisionFormatting) {
     
     writer.open();
     for (const auto& [word, count, percentage] : data) {
-        writer.write(word, count, percentage);
+        writer.write({
+            word,
+            std::to_string(count),
+            CSVWriter::formatFloat(percentage)
+        });
     }
     writer.close();
     

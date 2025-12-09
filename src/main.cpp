@@ -4,12 +4,13 @@
 #include "WordCounter.h"
 #include "WordStatistics.h"
 #include "CSVWriter.h"
+#include "LineParser.h"
+
+#pragma once
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
         std::cerr << "Usage: " << argv[0] << " <input.txt> <output.csv>" << std::endl;
-        std::cout << "Press Enter to exit...";
-        std::cin.get();
         return 1;
     }
 
@@ -18,8 +19,11 @@ int main(int argc, char* argv[]) {
         WordCounter counter;
         
         reader.open();
+        LineParser lp;
+        std::vector<std::string> line;
         while (reader.hasNext()) {
-            counter.handle(reader.next());
+            line = lp.parse(reader.next());
+            counter.handle(line);
         }
         reader.close(); 
 
@@ -29,7 +33,11 @@ int main(int argc, char* argv[]) {
         CSVWriter writer(argv[2]);
         writer.open();
         for (const auto& [word, count, percentage] : vectorStatistics) {
-            writer.write(word, count, percentage);
+            writer.write({
+                word,
+                std::to_string(count),
+                CSVWriter::formatFloat(percentage)
+            });
         }
         writer.close();
 
@@ -37,8 +45,6 @@ int main(int argc, char* argv[]) {
 
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
-        std::cout << "Press Enter to exit...";
-        std::cin.get();
         return 1;
     }
 

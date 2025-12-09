@@ -23,7 +23,6 @@ FileReader::~FileReader() {
 }
 
 void FileReader::open() {
-    // Close the previous file if it is open
     cleanup();
     
     file = new std::ifstream(filename);
@@ -58,13 +57,11 @@ void FileReader::reset() {
     file->seekg(0);         // Move to the beginning of the file
 }
 
-// Move constructor
 FileReader::FileReader(FileReader&& other) noexcept 
     : filename(std::move(other.filename)), file(other.file) {
     other.file = nullptr;
 }
 
-// Move assignment operator
 FileReader& FileReader::operator=(FileReader&& other) noexcept {
     if (this != &other) {
         cleanup();

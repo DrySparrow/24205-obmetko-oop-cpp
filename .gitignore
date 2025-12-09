@@ -17,7 +17,7 @@ build/
 CMakeFiles/
 cmake-build-*/
 CMakeCache.txt
-CMakeLists.txt.user
+CMakeLists.txt
 *.cmake
 Makefile
 install_manifest.txt

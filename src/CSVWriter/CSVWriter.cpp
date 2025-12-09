@@ -17,6 +17,14 @@ void CSVWriter::close() {
     }
 }
 
-void CSVWriter::write(const std::string& value1, int value2, double value3) {
-    file << value1 << "," << value2 << "," << std::fixed << std::setprecision(2) << value3 << "\n";
+void CSVWriter::write(const std::vector<std::string> args) {
+    if (args.empty()) {
+        file << "\n";
+        return;
+    }
+    file << args[0];
+    for (int i = 1; i < args.size(); ++i) {
+        file << "," << args[i];
+    }
+    file << "\n";
 }

@@ -1,4 +1,48 @@
-*.exe
-*.json
-CMakeLists.txt
+# Сборка и исполняемые файлы
 build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Файлы IDE и редакторов
+.vscode/
+.idea/
+*.sln
+*.vcxproj*
+*.user
+*.filters
+
+# CMake
+CMakeFiles/
+cmake-build-*/
+CMakeCache.txt
+CMakeLists.txt.user
+*.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
+
+# Тестовые файлы данных
+in.txt
+out.csv
+test_*.txt
+test_*.csv
+*.output
+
+# Файлы системные
+.DS_Store
+Thumbs.db
+
+# Файлы временные и логи
+*.log
+*.tmp
+*.temp
+
+# Дополнительно для C++
+*.o
+*.obj
+*.ilk
+*.pdb
+*.sdf
+*.ipch

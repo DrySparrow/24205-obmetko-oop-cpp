@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
         while (reader.hasNext()) {
             counter.handle(reader.next());
         }
-        reader.close();
+        reader.close(); 
 
         WordStatistics stats(counter.getWordCount());
         auto vectorStatistics = stats.getStatistics();
@@ -34,8 +34,6 @@ int main(int argc, char* argv[]) {
         writer.close();
 
         std::cout << "Successfully processed " << vectorStatistics.size() << " words to " << argv[2] << std::endl;
-        std::cout << "Press Enter to exit...";
-        std::cin.get();
 
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

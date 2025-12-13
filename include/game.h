@@ -14,7 +14,7 @@ public:
     
     void runInteractive();
     void runTickMode(int iterations);
-    void runOfflineMode(const std::string& inputFile, int iterations, const std::string& outputFile);
+    int runOfflineMode(const std::string& inputFile, int iterations, const std::string& outputFile);
     
 private:
     void processCommand(const std::string& command);

@@ -1,4 +1,4 @@
-#include "game.h"
+#include "../include/game.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -81,7 +81,9 @@ int main(int argc, char* argv[]) {
             printUsage(argv[0]);
             return 1;
         }
-        game.runOfflineMode(inputFile, iterations, outputFile);
+        if (game.runOfflineMode(inputFile, iterations, outputFile) != 0) {
+            return 1;
+        }
     }
     else if (tickMode) {
         game.runTickMode(tickIterations);

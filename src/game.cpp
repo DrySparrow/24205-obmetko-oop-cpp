@@ -1,4 +1,4 @@
-#include "game.h"
+#include "../include/game.h"
 #include <iostream>
 #include <sstream>
 #include <thread>
@@ -38,10 +38,10 @@ void Game::runTickMode(int iterations) {
     showStatus();
 }
 
-void Game::runOfflineMode(const std::string& inputFile, int iterations, const std::string& outputFile) {
+int Game::runOfflineMode(const std::string& inputFile, int iterations, const std::string& outputFile) {
     if (!universe.loadFromFile(inputFile)) {
         std::cerr << "Failed to load universe from: " << inputFile << std::endl;
-        return;
+        return 1;
     }
     
     std::cout << "Processing " << iterations << " iterations..." << std::endl;
@@ -55,6 +55,7 @@ void Game::runOfflineMode(const std::string& inputFile, int iterations, const st
     } else {
         std::cerr << "Failed to save result to: " << outputFile << std::endl;
     }
+    return 0;
 }
 
 void Game::processCommand(const std::string& command) {
@@ -120,8 +121,7 @@ void Game::processCommand(const std::string& command) {
             universe.setRule(Rule(ruleString));
             std::cout << "Rule changed to: " << universe.getRule().toString() << std::endl;
         } else {
-            std::cout << "Current rule: " << universe.getRule().toString() 
-                      << " (" << universe.getRule().getName() << ")" << std::endl;
+            std::cout << "Current rule: " << universe.getRule().toString() << std::endl;
         }
     }
     else if (!cmd.empty()) {

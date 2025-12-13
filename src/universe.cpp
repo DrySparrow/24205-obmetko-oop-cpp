@@ -1,10 +1,9 @@
-#include "universe.h"
+#include "../include/universe.h"
 #include <fstream>
 #include <iostream>
-#include <iomanip>
 #include <algorithm>
 
-const int WIDTH = 20;
+const int WIDTH = 30;
 const int HEIGHT = 20;
 
 Universe::Universe() : name("Universe"), width(WIDTH), height(HEIGHT), grid(HEIGHT, std::vector<bool>(WIDTH, false)), 
@@ -157,7 +156,7 @@ bool Universe::saveToFile(const std::string& filename) const {
 
 void Universe::display() const {
     std::cout << "\nUniverse: " << name << std::endl;
-    std::cout << "Rule: " << rule.toString() << " (" << rule.getName() << ")" << std::endl;
+    std::cout << "Rule: " << rule.toString() << std::endl;
     std::cout << "Generation: " << generation << std::endl;
     std::cout << "Size: " << width << "x" << height << std::endl;
     

@@ -1,16 +1,16 @@
-#include "rule.h"
+#include "../include/rule.h"
 #include <sstream>
 #include <algorithm>
 #include <iostream>
 
-Rule::Rule() : name("Conway's Game of Life"), birth({3}), survive({2, 3}) {}
+Rule::Rule() : birth({3}), survive({2, 3}) {}
 
 Rule::Rule(const std::string& ruleString) {
     *this = parseRuleString(ruleString);
 }
 
-Rule::Rule(const std::vector<int>& b, const std::vector<int>& s, const std::string& n) 
-    : name(n), birth(b), survive(s) {}
+Rule::Rule(const std::vector<int>& b, const std::vector<int>& s) 
+    : birth(b), survive(s) {}
 
 bool Rule::shouldCellLive(bool isAlive, int neighbors) const {
     if (isAlive) {
@@ -29,14 +29,9 @@ std::string Rule::toString() const {
     return ss.str();
 }
 
-std::string Rule::getName() const {
-    return name;
-}
-
 Rule Rule::parseRuleString(const std::string& ruleString) {
     std::vector<int> birth;
     std::vector<int> survive;
-    std::string name = "Custom Rule";
     
     if (ruleString.empty()) {
         return getDefaultRule();
@@ -69,9 +64,9 @@ Rule Rule::parseRuleString(const std::string& ruleString) {
         }
     }
     
-    return Rule(birth, survive, name);
+    return Rule(birth, survive);
 }
 
 Rule Rule::getDefaultRule() {
-    return Rule({3}, {2, 3}, "Conway's Game of Life");
+    return Rule({3}, {2, 3});
 }

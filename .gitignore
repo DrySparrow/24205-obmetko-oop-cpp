@@ -1,4 +1,3 @@
 *.exe
 *.json
-CMakeLists.txt
 build/

@@ -36,7 +36,7 @@ std::array<std::vector<int>, 2> GameOfLifeEngine::parseRuleString(const std::str
     }
     
     size_t slashPos = ruleString.find('/');
-    if (slashPos == std::string::npos) {
+    if (slashPos == std::string::npos || ruleString[0] != 'B' || ruleString[slashPos+1] != 'S') {
         std::cerr << "Invalid rule format. Using default rule." << std::endl;
         return getDefaultRule();
     }

@@ -1,0 +1,5 @@
+C:/Users/Sergey/Desktop/coding/tasks_oop/task-0/build/CMakeFiles/word_count.dir
+C:/Users/Sergey/Desktop/coding/tasks_oop/task-0/build/CMakeFiles/run_all_tests.dir
+C:/Users/Sergey/Desktop/coding/tasks_oop/task-0/build/CMakeFiles/test.dir
+C:/Users/Sergey/Desktop/coding/tasks_oop/task-0/build/CMakeFiles/edit_cache.dir
+C:/Users/Sergey/Desktop/coding/tasks_oop/task-0/build/CMakeFiles/rebuild_cache.dir

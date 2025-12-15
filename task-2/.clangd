@@ -1,0 +1,4 @@
+CompileFlags:
+  Add:
+    - -IC:/Users/Sergey/vcpkg/installed/x64-mingw-static/include
+    - -IC:/Users/Sergey/Desktop/coding/tasks_oop/task-2/include

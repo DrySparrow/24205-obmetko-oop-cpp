@@ -29,7 +29,7 @@ void Game::runTickMode(int iterations) {
     
     for (int i = 0; i < iterations; ++i) {
         showStatus();
-        universe.nextGeneration();
+        engine.nextGeneration();
         
         if (i <= iterations) {
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -39,7 +39,7 @@ void Game::runTickMode(int iterations) {
 }
 
 int Game::runOfflineMode(const std::string& inputFile, int iterations, const std::string& outputFile) {
-    if (!universe.loadFromFile(inputFile)) {
+    if (!engine.loadFromFile(inputFile)) {
         std::cerr << "Failed to load universe from: " << inputFile << std::endl;
         return 1;
     }
@@ -47,10 +47,10 @@ int Game::runOfflineMode(const std::string& inputFile, int iterations, const std
     std::cout << "Processing " << iterations << " iterations..." << std::endl;
     
     for (int i = 0; i < iterations; ++i) {
-        universe.nextGeneration();
+        engine.nextGeneration();
     }
     
-    if (universe.saveToFile(outputFile)) {
+    if (engine.saveToFile(outputFile)) {
         std::cout << "Result saved to: " << outputFile << std::endl;
     } else {
         std::cerr << "Failed to save result to: " << outputFile << std::endl;
@@ -74,7 +74,7 @@ void Game::processCommand(const std::string& command) {
     else if (cmd == "dump") {
         std::string filename;
         if (ss >> filename) {
-            if (universe.saveToFile(filename)) {
+            if (engine.saveToFile(filename)) {
                 std::cout << "Universe saved to: " << filename << std::endl;
             }
         } else {
@@ -92,14 +92,14 @@ void Game::processCommand(const std::string& command) {
         
         std::cout << "Running " << n << " iteration(s)..." << std::endl;
         for (int i = 0; i < n; ++i) {
-            universe.nextGeneration();
+            engine.nextGeneration();
         }
         showStatus();
     }
     else if (cmd == "load") {
         std::string filename;
         if (ss >> filename) {
-            if (universe.loadFromFile(filename)) {
+            if (engine.loadFromFile(filename)) {
                 std::cout << "Universe loaded from: " << filename << std::endl;
                 showStatus();
             }
@@ -108,7 +108,7 @@ void Game::processCommand(const std::string& command) {
         }
     }
     else if (cmd == "clear") {
-        universe.clear();
+        engine.clear();
         std::cout << "Universe cleared" << std::endl;
         showStatus();
     }
@@ -118,10 +118,10 @@ void Game::processCommand(const std::string& command) {
     else if (cmd == "rule") {
         std::string ruleString;
         if (ss >> ruleString) {
-            universe.setRule(Rule(ruleString));
-            std::cout << "Rule changed to: " << universe.getRule().toString() << std::endl;
+            engine.setRule(ruleString);
+            std::cout << "Rule changed to: " << engine.getStringRule() << std::endl;
         } else {
-            std::cout << "Current rule: " << universe.getRule().toString() << std::endl;
+            std::cout << "Current rule: " << engine.getStringRule() << std::endl;
         }
     }
     else if (!cmd.empty()) {
@@ -144,5 +144,5 @@ void Game::showHelp() const {
 }
 
 void Game::showStatus() const {
-    universe.display();
+    engine.display();
 }

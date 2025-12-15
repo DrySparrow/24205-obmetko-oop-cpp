@@ -1,48 +1,22 @@
 #ifndef UNIVERSE_H
 #define UNIVERSE_H
 
-#include "rule.h"
+#include <array>
 #include <vector>
 #include <string>
 
 class Universe {
-private:
-    std::string name;
-    size_t width;
-    size_t height;
-    std::vector<std::vector<bool>> grid;
-    Rule rule;
-    int generation;
-    
-    int countNeighbors(int x, int y) const;
-    
 public:
+    std::string name;
+    size_t width = 30;
+    size_t height = 20;
+    std::vector<std::vector<bool>> grid;
+    std::array<std::vector<int>, 2> rule{{ {3}, {2, 3} }};
+    int generation = 0; // Инициализируйте здесь
+    
     Universe();
     Universe(size_t w, size_t h, const std::string& n = "Universe");
     Universe(const Universe& other);
-    
-    void setRule(const Rule& r);        // переместить в gameEngine
-    Rule getRule() const;
-    
-    void setCell(int x, int y, bool alive);
-    bool getCell(int x, int y) const;
-    
-    void clear();
-    void nextGeneration();
-    
-    bool loadFromFile(const std::string& filename);
-    bool saveToFile(const std::string& filename) const;
-    
-    void display() const;
-    
-    std::string getName() const;
-    void setName(const std::string& newName);
-    
-    size_t getWidth() const;
-    size_t getHeight() const;
-    int getGeneration() const;
-    
-    void resize(size_t w, size_t h);
 };
 
 #endif

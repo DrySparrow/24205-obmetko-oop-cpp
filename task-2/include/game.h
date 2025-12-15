@@ -1,12 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "universe.h"
+#include "GameOfLifeEngine.h"
 #include <string>
 
 class Game {
 private:
-    Universe universe;
+    GameOfLifeEngine engine;
     bool running;
     
 public:

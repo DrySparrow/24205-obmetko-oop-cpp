@@ -1,8 +1,7 @@
-// Commands.hpp
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
-#include "Command.cpp"
+#include "Command.h"
 #include "game.h"
 #include "GameOfLifeEngine.h"
 #include <iostream>

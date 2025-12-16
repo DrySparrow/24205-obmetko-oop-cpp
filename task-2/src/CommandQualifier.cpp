@@ -1,7 +1,7 @@
 #ifndef COMMAND_QUALIFIER_H
 #define COMMAND_QUALIFIER_H
 
-#include "Commands.cpp"
+#include "Commands.hpp"
 #include <memory>
 #include <string>
 #include <unordered_map>

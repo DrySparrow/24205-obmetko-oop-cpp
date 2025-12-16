@@ -1,0 +1,12 @@
+# ninja log v6
+36	7332	7875574036388959	CMakeFiles/gameoflife.dir/src/Universe.cpp.obj	b38e8af2baf7c874
+89	7942	7875574036857736	CMakeFiles/run_all_tests.dir/src/Universe.cpp.obj	886b674cef7fbd1b
+60	10314	7875574036545782	CMakeFiles/gameoflife.dir/src/Commands.cpp.obj	a2aae508e40e722
+43	10535	7875574036388959	CMakeFiles/gameoflife.dir/src/GameOfLifeEngine.cpp.obj	6e802ae07a47927b
+19	13136	7875574036233880	CMakeFiles/gameoflife.dir/src/main.cpp.obj	2f8b473afd19d3e5
+53	13700	7875574036545782	CMakeFiles/gameoflife.dir/src/CommandQualifier.cpp.obj	66cb31ffec8821b5
+70	16570	7875574036701580	CMakeFiles/run_all_tests.dir/tests/test_universe.cpp.obj	a58e8f9bc8a299b7
+80	19703	7875574036857736	CMakeFiles/run_all_tests.dir/tests/test_rule.cpp.obj	32ffcb4b7ae31eef
+50	905	7875574516564310	run_all_tests.exe	9bbd890b7440ca26
+40	6861	7875574516564310	CMakeFiles/gameoflife.dir/src/game.cpp.obj	23a5c37c388b9d5
+6863	7653	7875574584760345	gameoflife.exe	6783657f45313c63

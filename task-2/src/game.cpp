@@ -1,10 +1,12 @@
 #include "../include/game.h"
+#include "../include/CommandQualifier.h"
+#include "../include/Command.h"
 #include <iostream>
 #include <sstream>
 #include <thread>
 #include <chrono>
 
-Game::Game() : running(false) {}
+Game::Game() : running(false), commandQualifier(std::make_unique<CommandQualifier>()) {}
 
 void Game::runInteractive() {
     running = true;
@@ -59,73 +61,18 @@ int Game::runOfflineMode(const std::string& inputFile, int iterations, const std
 }
 
 void Game::processCommand(const std::string& command) {
-    std::stringstream ss(command);
-    std::string cmd;
-    ss >> cmd;
-
-    if (cmd.empty()) return;
+    if (command.empty()) return;
     
-    if (cmd == "exit" || cmd == "quit" || cmd == "q") {
-        running = false;
-    } 
-    else if (cmd == "help" || cmd == "h") {
-        showHelp();
-    }
-    else if (cmd == "dump") {
-        std::string filename;
-        if (ss >> filename) {
-            if (engine.saveToFile(filename)) {
-                std::cout << "Universe saved to: " << filename << std::endl;
-            }
-        } else {
-            std::cout << "Usage: dump <filename>" << std::endl;
-        }
-    }
-    else if (cmd == "tick" || cmd == "t") {
-        int n = 1;
-        ss >> n;
-        
-        if (n <= 0) {
-            std::cout << "Error: Number of iterations must be positive!" << std::endl;
-            return;
-        }
-        
-        std::cout << "Running " << n << " iteration(s)..." << std::endl;
-        for (int i = 0; i < n; ++i) {
-            engine.nextGeneration();
-        }
-        showStatus();
-    }
-    else if (cmd == "load") {
-        std::string filename;
-        if (ss >> filename) {
-            if (engine.loadFromFile(filename)) {
-                std::cout << "Universe loaded from: " << filename << std::endl;
-                showStatus();
-            }
-        } else {
-            std::cout << "Usage: load <filename>" << std::endl;
-        }
-    }
-    else if (cmd == "clear") {
-        engine.clear();
-        std::cout << "Universe cleared" << std::endl;
-        showStatus();
-    }
-    else if (cmd == "status") {
-        showStatus();
-    }
-    else if (cmd == "rule") {
-        std::string ruleString;
-        if (ss >> ruleString) {
-            engine.setRule(ruleString);
-            std::cout << "Rule changed to: " << engine.getStringRule() << std::endl;
-        } else {
-            std::cout << "Current rule: " << engine.getStringRule() << std::endl;
-        }
-    }
-    else if (!cmd.empty()) {
-        std::cout << "Unknown command: " << cmd << std::endl;
+    std::stringstream ss(command);
+    std::string cmdName;
+    ss >> cmdName;
+    
+    std::shared_ptr<Command> cmd = commandQualifier->qualifyCommand(cmdName);
+    
+    if (cmd) {
+        cmd->execute(*this, ss);
+    } else {
+        std::cout << "Unknown command: " << cmdName << std::endl;
         std::cout << "Type 'help' for available commands" << std::endl;
     }
 }

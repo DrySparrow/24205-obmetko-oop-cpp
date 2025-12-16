@@ -11,6 +11,7 @@ set(MAIN_SOURCES
     src/Universe.cpp
     src/GameOfLifeEngine.cpp
     src/CommandQualifier.cpp
+    src/Commands.cpp
 )
 
 # Список исходных файлов для тестов
